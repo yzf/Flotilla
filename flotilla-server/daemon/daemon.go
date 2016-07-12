@@ -14,7 +14,6 @@ import (
 	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/amqp/rabbitmq"
 	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/beanstalkd"
 	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/kafka"
-	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/kestrel"
 	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/nats"
 	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/nsq"
 	"github.com/tylertreat/Flotilla/flotilla-server/daemon/broker/pubsub"
@@ -38,7 +37,6 @@ const (
 	NATS        = "nats"
 	Beanstalkd  = "beanstalkd"
 	Kafka       = "kafka"
-	Kestrel     = "kestrel"
 	ActiveMQ    = "activemq"
 	RabbitMQ    = "rabbitmq"
 	NSQ         = "nsq"
@@ -224,8 +222,6 @@ func (d *Daemon) processBrokerStart(broker, host, port string) (interface{}, err
 		d.broker = &beanstalkd.Broker{}
 	case Kafka:
 		d.broker = &kafka.Broker{}
-	case Kestrel:
-		d.broker = &kestrel.Broker{}
 	case ActiveMQ:
 		d.broker = &activemq.Broker{}
 	case RabbitMQ:
@@ -353,8 +349,6 @@ func (d *Daemon) newPeer(broker, host string) (peer, error) {
 		return beanstalkd.NewPeer(host)
 	case Kafka:
 		return kafka.NewPeer(host)
-	case Kestrel:
-		return kestrel.NewPeer(host)
 	case ActiveMQ:
 		return activemq.NewPeer(host)
 	case RabbitMQ:
