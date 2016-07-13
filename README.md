@@ -34,16 +34,26 @@ Flotilla consists of two binaries: the server daemon and client. The daemon runs
 To install the daemon, run:
 
 ```bash
-$ go get github.com/tylertreat/flotilla/flotilla-server
+$ go get github.com/yzf/flotilla/flotilla-server
 ```
 
 To install the client, run:
 
 ```bash
-$ go get github.com/tylertreat/flotilla/flotilla-client
+$ go get github.com/yzf/flotilla/flotilla-client
 ```
 
 ## Usage
+
+First of all, Flotilla use docker to run the mqs, so you should install docker first. As some of the docker images are quit large, it's recommended to pull the images before starting the tests. The images are:
+
+1. rmohr/activemq
+2. rabbitmq
+3. m0ikz/beanstalkd
+4. jplock/zookeeper:3.4.6
+5. ches/kafka
+6. nats
+7. nsqio/nsq
 
 Ensure the daemon is running on any machines you wish Flotilla to communicate with:
 
