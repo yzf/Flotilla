@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	rabbitMQ     = "dockerfile/rabbitmq"
+	rabbitMQ     = "rabbitmq"
 	internalPort = "5672"
 )
 

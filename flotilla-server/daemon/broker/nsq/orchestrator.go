@@ -7,11 +7,11 @@ import (
 )
 
 const (
-	nsqlookupd      = "nsqio/nsqlookupd"
+	nsqlookupd      = "nsqio/nsq /nsqlookupd"
 	nsqlookupdPort1 = "4160"
 	nsqlookupdPort2 = "4161"
 	nsqlookupdCmd   = "docker run -d -p %s:%s -p %s:%s %s"
-	nsqd            = "nsqio/nsqd"
+	nsqd            = "nsqio/nsq /nsqd"
 	internalPort    = "4150"
 	nsqdPort        = "4151"
 	nsqdCmd         = `docker run -d -p %s:%s -p %s:%s %s \
